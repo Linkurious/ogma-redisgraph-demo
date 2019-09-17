@@ -1,0 +1,285 @@
+html, body {
+  width: 100%;
+  height: 100%;
+  padding: 0;
+  margin: 0;
+}
+
+html, body {
+  height: 100%;
+  margin: 0px;
+  font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+}
+
+.container {
+  display: flex;
+  flex-direction: column;
+  flex-wrap: nowrap;
+  justify-content: flex-start;
+  align-items: stretch;
+  align-content: stretch;
+  height: 100%;
+}
+
+
+.spinner {
+  display: inline-block;
+  width: 35px;
+  height: 35px;
+  border: 1px solid rgba(0,0,0,0.8);
+  border-left-color: rgba(0,0,0,0.6);
+  border-bottom-color: rgba(0,0,0,0.4);
+  border-right-color: rgba(0,0,0,0.2);
+  border-radius: 50%;
+  animation: rotate 600ms linear infinite;
+  -webkit-animation: rotate 600ms linear infinite;
+}
+
+@-webkit-keyframes rotate {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
+
+@keyframes rotate {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
+
+
+.wrapper {
+  flex: 1 1 auto;
+  display: flex;
+}
+
+  #controls {
+    background-color: #ddd;
+    width: 480px;
+    height: 100%;
+  }
+
+    .search-form {
+      position: relative;
+      width: 90%;
+      height: 40px;
+      border-radius: 40px;
+      box-shadow: 0 6px 8px rgba(0, 0, 0, 0.15);
+      background: #fff;
+      transition: all 0.3s ease;
+      margin-top: 20px;
+      margin-left: 20px;
+      margin-bottom: 10px;
+    }
+
+    .search-form .search-input {
+      margin-top: 10px;
+      margin-left: 38px;
+      font-size: 14px;
+      background: none;
+      color: #5a6674;
+      width: 100%;
+      height: 20px;
+      border: none;
+      -webkit-appearance: none;
+         -moz-appearance: none;
+              appearance: none;
+      outline: none;
+      padding-right: 80px;
+    }
+
+    .search-form .search-button {
+      position: absolute;
+      top: 10px;
+      right: 15px;
+      height: 20px;
+      width: 20px;
+      padding: 0;
+      margin: 0;
+      border: none;
+      background: none;
+      outline: none!important;
+      cursor: pointer;
+    }
+
+    .search-form .search-button svg {
+      width: 20px;
+      height: 20px;
+      fill: #5a6674;
+    }
+
+    .query {
+      font-family: 'Courier New', Courier, monospace;
+      display: none;
+    }
+
+    .search-stats {
+      padding: 20px;
+      font-weight: bold;
+      user-select: none;
+    }
+
+    .search-tip {
+      font-size: 11px;
+      padding: 0 60px;
+      margin-bottom: 20px;
+    }
+
+    #controls footer {
+      position: absolute;
+      bottom: 0;
+      padding: 20px;
+      user-select: none;
+      text-align: center;
+    }
+
+    .CodeMirror {
+      width: 100%;
+      height: 240px;
+      font-size: 16px;
+      padding-left: 10px;
+    }
+
+  .logo {
+    width: 40px;
+    display: inline-block;
+    margin: 0 15px 15px 0;
+  }
+
+  #vis {
+    flex: 1 1 70%;
+    position: relative;
+  }
+
+  #vis .spinner {
+    display: none;
+  }
+
+  #vis.loading .spinner {
+    display: inline-block;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+  }
+
+  #vis.loading #ogma-container {
+    opacity: 0.8;
+  }
+
+  .hint {
+    position: absolute;
+    top: 50%;
+    color: #bbbbbb;
+    font-size: 150%;
+    text-align: center;
+    width: 100%;
+    display: none;
+  }
+
+  #vis.uninitialized .hint-uninitialized {
+    display: block;
+  }
+
+  #vis.empty .hint-empty {
+    display: block;
+  }
+
+  #vis.loading .hint {
+    display: none;
+  }
+
+  #ogma-container {
+    height: 100%;
+    width: 100%;
+  }
+
+
+  .tooltip {
+    max-width: 240px;
+    max-height: 280px;
+    background-color: #fff;
+    border: 1px solid #999;
+    box-shadow: 0 2px 6px rgba(0,0,0,0.3);
+    border-radius: 6px;
+    cursor: auto;
+    font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+    font-size: 12px;
+  }
+  .tooltip .icon {
+    font-family: FontAwesome;
+  }
+  .tooltip-header {
+    font-size: 130%;
+    color: #000;
+    border-bottom: 1px solid #999;
+    padding: 15px;
+    font-weight: normal;
+  }
+  .tooltip-body {
+    padding: 15px;
+    overflow-x: hidden;
+    overflow-y: auto;
+    max-width: inherit;
+    max-height: 180px;
+  }
+  .tooltip-body .caption {
+    color: #333;
+    text-align: left;
+  }
+  .tooltip-footer {
+    padding: 10px;
+    border-top: 1px solid #999;
+  }
+  .tooltip > .arrow {
+    border-width: 10px;
+    position: absolute;
+    display: block;
+    width: 0;
+    height: 0;
+    border-color: transparent;
+    border-style: solid;
+  }
+  .tooltip.top {
+    margin-top: -12px;
+  }
+  .tooltip.top > .arrow {
+    left: 50%;
+    bottom: -10px;
+    margin-left: -10px;
+    border-top-color: #999;
+    border-bottom-width: 0;
+  }
+  .tooltip.bottom {
+    margin-top: 12px;
+  }
+  .tooltip.bottom > .arrow {
+    left: 50%;
+    top: -10px;
+    margin-left: -10px;
+    border-bottom-color: #999;
+    border-top-width: 0;
+  }
+  .tooltip.left {
+    margin-left: -12px;
+  }
+  .tooltip.left > .arrow {
+    top: 50%;
+    right: -10px;
+    margin-top: -10px;
+    border-left-color: #999;
+    border-right-width: 0;
+  }
+  .tooltip.right {
+    margin-left: 12px;
+  }
+  .tooltip.right > .arrow {
+    top: 50%;
+    left: -10px;
+    margin-top: -10px;
+    border-right-color: #999;
+    border-left-width: 0;
+  }
+
+@media screen and (max-width: 600px) {
+  #ogma-container, #controls {
+    width: 100%;
+  }
+}

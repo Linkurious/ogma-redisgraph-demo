@@ -1,0 +1,8 @@
+node_modules
+ogma-key*
+Dockerfile
+static/bundle.*
+.process
+auth.json
+*.tar.gz
+.DS_Store
