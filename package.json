@@ -22,7 +22,7 @@
   "dependencies": {
     "body-parser": "^1.18.3",
     "codemirror": "^5.45.0",
-    "express": "^4.16.4",
+    "express": "^4.17.3",
     "express-basic-auth": "^1.1.6",
     "fuse.js": "^3.4.4",
     "@linkurious/ogma": "4.1.0",
